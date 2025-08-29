@@ -1,0 +1,38 @@
+{
+  "data_source": "yahoo",
+  "tickers": ["AAPL", "GOOGL", "MSFT", "AMZN", "TSLA"],
+  "start_date": "2020-01-01",
+  "end_date": "2023-12-31",
+  "n_regimes": 3,
+  "bayesian_model_type": "student_t",
+  "optimization_method": "max_sharpe",
+  "risk_aversion": 1.0,
+  "risk_free_rate": 0.02,
+  "rebalance_frequency": "monthly",
+  "transaction_costs": 0.001,
+  "constraints": {
+    "long_only": true,
+    "max_weight": 0.3,
+    "min_weight": 0.0,
+    "sector_limits": {
+      "technology": 0.4,
+      "healthcare": 0.3,
+      "financial": 0.25
+    }
+  },
+  "performance_metrics": {
+    "risk_free_rate": 0.02,
+    "periods_per_year": 252,
+    "rolling_window": 252
+  },
+  "visualization": {
+    "theme": "plotly_white",
+    "height": 500,
+    "width": 800
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "portfolio_optimization.log",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  }
+}
